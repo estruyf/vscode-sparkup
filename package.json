@@ -1,0 +1,161 @@
+{
+  "name": "vscode-sparkup",
+  "displayName": "Sparkup",
+  "description": "Elevate your content to new heights with Sparkup ✨",
+  "icon": "assets/sparkup-128x128.png",
+  "version": "0.0.1",
+  "preview": true,
+  "publisher": "eliostruyf",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "homepage": "https://github.com/estruyf/vscode-sparkup",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/estruyf/vscode-sparkup"
+  },
+  "qna": "https://github.com/estruyf/vscode-sparkup/issues",
+  "activationEvents": [
+    "workspaceContains:**/*.md*",
+    "onCommand:vscode-sparkup.fixSpelling",
+    "onCommand:vscode-sparkup.revisionText",
+    "onCommand:vscode-sparkup.seoOptimize",
+    "onCommand:vscode-sparkup.biasFreeLanguage",
+    "onCommand:vscode-sparkup.freeform"
+  ],
+  "keywords": [
+    "AI",
+    "Text analysis",
+    "openai",
+    "Markdown"
+  ],
+  "license": "MIT",
+  "author": "Elio Struyf <elio@struyfconsulting.be> (https://www.eliostruyf.com)",
+  "main": "./dist/extension.js",
+  "contributes": {
+    "walkthroughs": [
+      {
+        "id": "sparkup.init",
+        "title": "Getting started with Sparkup",
+        "description": "To get started with Sparkup, you will first need to get an API key to be able to make your content spark ✨.",
+        "steps": [
+          {
+            "id": "sparkup.init.getApiKey",
+            "title": "Get your API key",
+            "description": "To get your API key, you will need to subscribe to the Sparkup API on RapidAPI. You can do this by clicking the button below. [Subscribe to Sparkup API](https://rapidapi.com/eliostruyf/api/sparkup)",
+            "media": {
+              "image": "assets/sparkup.png",
+              "altText": "Sparkup logo"
+            },
+            "completionEvents": ["onLink:https://rapidapi.com/eliostruyf/api/sparkup"]
+          },
+          {
+            "id": "sparkup.init.configureApiKey",
+            "title": "Configure the API key",
+            "description": "Configure the Sparkup API key in the `sparkup.apiKey` setting. [Open settings](command:workbench.action.openSettings)",
+            "media": {
+              "image": "assets/sparkup.png",
+              "altText": "Sparkup logo"
+            },
+            "completionEvents": ["onSettingChanged:sparkup.apiKey"]
+          },
+          {
+            "id": "sparkup.init.usage",
+            "title": "Ready to spark up your content",
+            "description": "Once you added your Sparkup API key, you can now select text in your file(s), and let it spark by right-clicking and selecting one of the `Sparkup` options.",
+            "media": {
+              "image": "assets/sparkup-options.png",
+              "altText": "Sparkup logo"
+            }
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "Sparkup",
+      "properties": {
+        "sparkup.apiKey": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Your Sparkup API key which you can get by subscribing to the API on RapidAPI: [https://rapidapi.com/eliostruyf/api/sparkup](https://rapidapi.com/eliostruyf/api/sparkup)."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "vscode-sparkup.revisionText",
+        "title": "Sparkup: Revision text"
+      },
+      {
+        "command": "vscode-sparkup.seoOptimize",
+        "title": "Sparkup: Optimize text for SEO"
+      },
+      {
+        "command": "vscode-sparkup.fixSpelling",
+        "title": "Sparkup: Fix spelling mistakes"
+      },
+      {
+        "command": "vscode-sparkup.biasFreeLanguage",
+        "title": "Sparkup: Bias free language"
+      },
+      {
+        "command": "vscode-sparkup.freeform",
+        "title": "Sparkup: Tell us what you want to do"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "vscode-sparkup.biasFreeLanguage",
+          "group": "sparkup",
+          "when": "editorHasSelection && editorLangId == 'markdown'"
+        },
+        {
+          "command": "vscode-sparkup.fixSpelling",
+          "group": "sparkup",
+          "when": "editorHasSelection && editorLangId == 'markdown'"
+        },
+        {
+          "command": "vscode-sparkup.revisionText",
+          "group": "sparkup",
+          "when": "editorHasSelection && editorLangId == 'markdown'"
+        },
+        {
+          "command": "vscode-sparkup.seoOptimize",
+          "group": "sparkup",
+          "when": "editorHasSelection && editorLangId == 'markdown'"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/node-fetch": "^2.6.2",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
