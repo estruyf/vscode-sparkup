@@ -20,6 +20,10 @@ With Sparkup, you can harness the power of AI to enhance your content. Utilize i
   <img src="./assets/sparkup-options.png" alt="Sparkup actions" />
 </p>
 
+## Tutorial
+
+If you want more information about how to set up Sparkup, you can follow the API tutorial: [Getting started with Sparkup](https://rapidapi.com/eliostruyf/api/sparkup/tutorials/using-the-api-in-combination-with-the-sparkup---visual-studio-code-extension)
+
 ## Issues / Feedback
 
 All your issues and feedback can be submitted to the [GitHub repository](https://github.com/estruyf/vscode-sparkup/issues).
