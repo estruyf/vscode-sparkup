@@ -2,6 +2,10 @@
 
 ## Beta versions
 
+### [0.0.5] - 2023-01-13
+
+- Update readme
+
 ### [0.0.4] - 2023-01-13
 
 - Added support to simplify your content

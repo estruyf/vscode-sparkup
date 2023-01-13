@@ -1,12 +1,16 @@
 # Sparkup
 
-## Elevate your content to new heights with Sparkup
+## Unlock Your Content's Potential with Sparkup
 
-With Sparkup, you can harness the power of AI to enhance your content. Utilize it for:
+Are you tired of juggling multiple programs just to rewrite your content? Introducing #Sparkup, a VSCode extension that streamlines the editing process by allowing you to rewrite your content directly within the editor. With #Sparkup, you can not only create compelling headlines and titles, but also optimize your content for SEO and revise it with ease. Say goodbye to tedious editing and try #Sparkup in beta today!
 
-- Tailoring your text to a specific audience and purpose
+### Unleash the Power of AI
+
+With Sparkup, you can elevate your content to new heights by harnessing the power of AI with the following features:
+
+- Targeting your text to a specific audience and purpose
 - Ensuring accuracy with spellchecks
-- Creating inclusive language
+- Incorporating inclusive language
 - Optimizing for search engine ranking with SEO
 - Simplifying your content
 - Generating headlines based on the content.
