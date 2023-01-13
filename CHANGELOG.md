@@ -2,6 +2,11 @@
 
 ## Beta versions
 
+### [0.0.4] - 2023-01-13
+
+- Added support to simplify your content
+- Added support to generate headlines
+
 ### [0.0.3] - 2023-01-13
 
 - Small enhancements

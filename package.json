@@ -24,7 +24,9 @@
     "onCommand:vscode-sparkup.revisionText",
     "onCommand:vscode-sparkup.seoOptimize",
     "onCommand:vscode-sparkup.biasFreeLanguage",
-    "onCommand:vscode-sparkup.freeform"
+    "onCommand:vscode-sparkup.freeform",
+    "onCommand:vscode-sparkup.headline",
+    "onCommand:vscode-sparkup.simplify"
   ],
   "keywords": [
     "AI",
@@ -108,6 +110,14 @@
       {
         "command": "vscode-sparkup.freeform",
         "title": "Sparkup: Tell us what you want to do"
+      },
+      {
+        "command": "vscode-sparkup.headline",
+        "title": "Sparkup: Create a headline for your content"
+      },
+      {
+        "command": "vscode-sparkup.simplify",
+        "title": "Sparkup: Simplify your content"
       }
     ],
     "menus": {
@@ -129,6 +139,16 @@
         },
         {
           "command": "vscode-sparkup.seoOptimize",
+          "group": "sparkup",
+          "when": "editorHasSelection && editorLangId == 'markdown'"
+        },
+        {
+          "command": "vscode-sparkup.headline",
+          "group": "sparkup",
+          "when": "editorHasSelection && editorLangId == 'markdown'"
+        },
+        {
+          "command": "vscode-sparkup.simplify",
           "group": "sparkup",
           "when": "editorHasSelection && editorLangId == 'markdown'"
         }

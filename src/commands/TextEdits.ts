@@ -6,11 +6,15 @@ import { getSelectedText, setSelectedText } from "../utils";
 export class TextEdits {
 
   public static async fixSpelling() {
-    await TextEdits.edit("spelling", "Fix only the spelling mistakes in the text")
+    await TextEdits.edit("spelling")
   }
 
   public static async biasFreeLanguage() {
-    await TextEdits.edit("biasfree", "Edit the text to use bias-free language to make sure that it doesn't use he, him, his, she, her, or hers. For example, you can use plural noun and prenoun.")
+    await TextEdits.edit("biasfree")
+  }
+
+  public static async simplify() {
+    await TextEdits.edit("simplify")
   }
 
   public static async freeform() {
@@ -26,7 +30,7 @@ export class TextEdits {
     await TextEdits.edit("freeform", answer)
   }
 
-  public static async edit(type: IntentType, instruction: string) {
+  public static async edit(type: IntentType, instruction?: string) {
     const selectionText = getSelectedText();
     if (!selectionText) {
       return;
@@ -40,7 +44,7 @@ export class TextEdits {
     window.withProgress({
       location: ProgressLocation.Notification,
       cancellable: false,
-      title: "Sparkup ✨: SEO optimization processing..."
+      title: "Sparkup ✨: Processing..."
     }, async (progress, token) => {
       const result = await AiService.call(type, selectionText, instruction);
 

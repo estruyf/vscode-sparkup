@@ -7,7 +7,13 @@ With Sparkup, you can harness the power of AI to enhance your content. Utilize i
 - Tailoring your text to a specific audience and purpose
 - Ensuring accuracy with spellchecks
 - Creating inclusive language
-- Optimizing for search engine ranking with SEO.
+- Optimizing for search engine ranking with SEO
+- Simplifying your content
+- Generating headlines based on the content.
+
+## Tutorial
+
+If you want more information about how to set up Sparkup, you can follow the API tutorial: [Getting started with Sparkup](https://rapidapi.com/eliostruyf/api/sparkup/tutorials/using-the-api-in-combination-with-the-sparkup---visual-studio-code-extension)
 
 ## Usage
 
@@ -19,10 +25,6 @@ With Sparkup, you can harness the power of AI to enhance your content. Utilize i
 <p align="center">
   <img src="./assets/sparkup-options.png" alt="Sparkup actions" />
 </p>
-
-## Tutorial
-
-If you want more information about how to set up Sparkup, you can follow the API tutorial: [Getting started with Sparkup](https://rapidapi.com/eliostruyf/api/sparkup/tutorials/using-the-api-in-combination-with-the-sparkup---visual-studio-code-extension)
 
 ## Issues / Feedback
 

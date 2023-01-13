@@ -2,12 +2,14 @@ import fetch from "node-fetch";
 import { workspace, window } from "vscode";
 
 const API_URL = "https://sparkup.p.rapidapi.com/api";
+// const API_URL = "http://localhost:7071/api";
 enum Endpoint {
   revision = "revision",
   seo = "seo",
+  headline = "headline",
 }
 
-export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo";
+export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo" | "headline" | "simplify";
 
 export class AiService {
   
@@ -29,6 +31,11 @@ export class AiService {
         input,
         keywords,
       }
+    } else if (intent === "headline") {
+      endpoint = Endpoint.headline;
+      body = {
+        input
+      };
     } else {
       body = {
         intent,
@@ -49,6 +56,7 @@ export class AiService {
     });
 
     if (!response.ok) {
+      console.log(response.statusText);
       throw new Error("Something went wrong. Please try again.");
     }
 
