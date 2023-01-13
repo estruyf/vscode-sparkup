@@ -1,5 +1,5 @@
 import { ProgressLocation, window } from "vscode";
-import { AiService, IntendType } from "../service";
+import { AiService, IntentType } from "../service";
 import { getSelectedText, setSelectedText } from "../utils";
 
 
@@ -26,7 +26,7 @@ export class TextEdits {
     await TextEdits.edit("freeform", answer)
   }
 
-  public static async edit(type: IntendType, instruction: string) {
+  public static async edit(type: IntentType, instruction: string) {
     const selectionText = getSelectedText();
     if (!selectionText) {
       return;

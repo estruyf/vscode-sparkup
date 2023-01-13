@@ -10,8 +10,8 @@ export class RevisionText {
       return;
     }
 
-    const intentTypes = ["Inform", "Descriptive", "Engaging", "Tells a story"];
-    const audienceTypes = ["general", "technical", "marketing", "sales", "experts"];
+    const intentTypes = ["Informative", "Descriptive", "Engaging", "Tells a story"];
+    const audienceTypes = ["General", "Experts", "Marketing", "Sales", "Technical"];
 
     if (selectionText.length < 0 || selectionText.length > 1000) {
       window.showErrorMessage("Please select a text between 1 and 1000 characters.");
@@ -24,23 +24,26 @@ export class RevisionText {
       placeHolder: "Select the intent"
     });
 
+    if (!intent) {
+      return;
+    }
+
     const audience = await window.showQuickPick(audienceTypes, {
       canPickMany: false,
       title: "Select the audience for your text",
       placeHolder: "Select the audience"
     });
 
-    if (intent && intentTypes.includes(intent) && audience && audienceTypes.includes(audience)) {
-
+    if (intentTypes.includes(intent) && audience && audienceTypes.includes(audience)) {
       let instruction = ``;
-      if (intent === "Inform") {
+      if (intent === "Informative") {
         instruction = `Rewrite the text to inform a ${audience} audience:`
       } else if (intent === "Descriptive") {
         instruction = `Rewrite the text to be descriptive for a ${audience} audience:`
       } else if (intent === "Engaging") {
         instruction = `Rewrite the text to be engaging for a ${audience} audience:`
       } else if (intent === "Tells a story") {
-        instruction = `Rewrite the text to be a story for a ${audience} audience:`
+        instruction = `Rewrite the text to tell a story for a ${audience} audience:`
       }
 
       window.withProgress({

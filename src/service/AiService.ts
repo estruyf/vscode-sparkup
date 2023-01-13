@@ -7,11 +7,11 @@ enum Endpoint {
   seo = "seo",
 }
 
-export type IntendType = "spelling" | "biasfree" | "freeform" | "revision" | "seo";
+export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo";
 
 export class AiService {
   
-  public static async call(intend: IntendType, input: string, instruction?: string, keywords?: string) {
+  public static async call(intent: IntentType, input: string, instruction?: string, keywords?: string) {
     let endpoint = Endpoint.revision;
     let body: any = {};
 
@@ -23,7 +23,7 @@ export class AiService {
       throw new Error("No API key set.");
     }
 
-    if (intend === "seo") {
+    if (intent === "seo") {
       endpoint = Endpoint.seo;
       body = {
         input,
@@ -31,7 +31,7 @@ export class AiService {
       }
     } else {
       body = {
-        intend,
+        intent,
         input,
         instruction,
       };

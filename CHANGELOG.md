@@ -2,6 +2,10 @@
 
 ## Beta versions
 
+### [0.0.3] - 2023-01-13
+
+- Small enhancements
+
 ### [0.0.2] - 2023-01-12
 
 - Changes on the documentation/readme
