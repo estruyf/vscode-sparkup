@@ -13,7 +13,8 @@ With Sparkup, you can elevate your content to new heights by harnessing the powe
 - Incorporating inclusive language
 - Optimizing for search engine ranking with SEO
 - Simplifying your content
-- Generating headlines based on the content.
+- Generating headlines based on the content
+- Generating categories and tags based on the provided content.
 
 ## Tutorial
 

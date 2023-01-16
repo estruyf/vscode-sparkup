@@ -1,6 +1,7 @@
+import { Metadata } from './commands/Metadata';
 import { RevisionText } from './commands/RevisionText';
 import * as vscode from 'vscode';
-import { headline, SeoOptimization, TextEdits } from './commands';
+import { Headline, SeoOptimization, TextEdits } from './commands';
 import { SparkupContentProvider } from './provider';
 
 
@@ -10,7 +11,7 @@ export function activate(context: vscode.ExtensionContext) {
 	new SparkupContentProvider(context).init();
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.headline', headline.generate)
+		vscode.commands.registerCommand('vscode-sparkup.headline', Headline.generate)
 	);
 
 	context.subscriptions.push(
@@ -35,6 +36,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('vscode-sparkup.revisionText', RevisionText.revision)
+	);
+
+	context.subscriptions.push(
+		vscode.commands.registerCommand('vscode-sparkup.categorizeAndTag', Metadata.process)
 	);
 
 	console.log(`Sparkup ✨ is now active!`);

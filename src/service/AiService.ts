@@ -1,15 +1,18 @@
 import fetch from "node-fetch";
 import { workspace, window } from "vscode";
+import { Logger } from "./Logger";
 
 const API_URL = "https://sparkup.p.rapidapi.com/api";
 // const API_URL = "http://localhost:7071/api";
+
 enum Endpoint {
   revision = "revision",
   seo = "seo",
   headline = "headline",
+  categorization = "categorization",
 }
 
-export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo" | "headline" | "simplify";
+export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo" | "headline" | "simplify" | "categorization";
 
 export class AiService {
   
@@ -36,6 +39,11 @@ export class AiService {
       body = {
         input
       };
+    } else if (intent === "categorization") {
+      endpoint = Endpoint.categorization;
+      body = {
+        input
+      };
     } else {
       body = {
         intent,
@@ -56,7 +64,12 @@ export class AiService {
     });
 
     if (!response.ok) {
-      console.log(response.statusText);
+      if (response.status === 429) {
+        window.showErrorMessage(`Sparkup: You've reached your daily limit. Please upgrade your plan or try again later.`);
+      } else {
+        window.showErrorMessage(`Sparkup: Sorry, something went wrong. Please try again.`);
+      }
+      Logger.info(`Sparkup: Error calling ${endpoint} endpoint. Status: ${response.status}. Status text: ${response.statusText}`);
       throw new Error("Something went wrong. Please try again.");
     }
 

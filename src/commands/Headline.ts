@@ -1,10 +1,10 @@
-import { ProgressLocation, window, Uri, workspace, ViewColumn, languages } from "vscode";
+import { ProgressLocation, window, Uri } from "vscode";
 import { SparkupContentProvider } from "../provider";
 import { AiService } from "../service";
-import { getSelectedText } from "../utils";
+import { createDocument, getSelectedText } from "../utils";
 
 
-export class headline {
+export class Headline {
 
   public static async generate() {
     const selectionText = getSelectedText();
@@ -39,15 +39,10 @@ export class headline {
 
 ${headlines.map((headline: string, idx: number) => `${idx+1}. ${headline}`).join("\n")}
         `;
-        SparkupContentProvider.contentToDisplay = content;
 
         const language = window.activeTextEditor?.document.languageId || 'markdown';
 
-        const doc = await workspace.openTextDocument(uri);
-        await window.showTextDocument(doc, { preview: false, viewColumn: ViewColumn.Beside });
-        await languages.setTextDocumentLanguage(doc, language);
-
-        SparkupContentProvider.contentToDisplay = '';
+        await createDocument(uri, language, content);
       } else {
         window.showWarningMessage("Sparkup ✨: We couldn't generate a headline for you. Please try again.");
       }
