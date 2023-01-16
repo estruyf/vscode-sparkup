@@ -34,3 +34,12 @@ If you want more information about how to set up Sparkup, you can follow the API
 ## Issues / Feedback
 
 All your issues and feedback can be submitted to the [GitHub repository](https://github.com/estruyf/vscode-sparkup/issues).
+
+<br />
+<br />
+
+<p align="center">
+  <a href="https://visitorbadge.io" title="Visitor badge service">
+    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Festruyf%2Fvscode-sparkup&labelColor=%23d9e3f0&countColor=%23e84a26" height="25px" alt="Sparkup visitors" />
+  </a>
+</p>
