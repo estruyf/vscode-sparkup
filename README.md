@@ -8,13 +8,13 @@ Are you tired of juggling multiple programs just to rewrite your content? Introd
 
 With Sparkup, you can elevate your content to new heights by harnessing the power of AI with the following features:
 
-- Targeting your text to a specific audience and purpose
-- Ensuring accuracy with spellchecks
-- Incorporating inclusive language
-- Optimizing for search engine ranking with SEO
-- Simplifying your content
-- Generating headlines based on the content
-- Generating categories and tags based on the provided content.
+- Customize your text for a specific audience and purpose
+- Ensure accuracy with spellchecks
+- Use inclusive language
+- Optimize for search engine ranking with SEO
+- Simplify your content
+- Automatically generate headlines based on the content
+- Categorize and tag your content for better organization.
 
 ## Tutorial
 
