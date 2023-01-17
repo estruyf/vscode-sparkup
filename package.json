@@ -3,7 +3,7 @@
   "displayName": "Sparkup",
   "description": "Are you tired of juggling multiple programs just to rewrite your content? Introducing #Sparkup, a VSCode extension that streamlines the editing process by allowing you to rewrite your content directly within the editor.",
   "icon": "assets/sparkup-128x128.png",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "preview": true,
   "publisher": "eliostruyf",
   "engines": {
@@ -26,7 +26,8 @@
     "onCommand:vscode-sparkup.biasFreeLanguage",
     "onCommand:vscode-sparkup.freeform",
     "onCommand:vscode-sparkup.headline",
-    "onCommand:vscode-sparkup.simplify"
+    "onCommand:vscode-sparkup.simplify",
+    "onCommand:vscode-sparkup.categorizeAndTag"
   ],
   "keywords": [
     "AI",
@@ -118,6 +119,10 @@
       {
         "command": "vscode-sparkup.simplify",
         "title": "Sparkup: Simplify your content"
+      },
+      {
+        "command": "vscode-sparkup.categorizeAndTag",
+        "title": "Sparkup: Generate categories and tags"
       }
     ],
     "menus": {
@@ -125,32 +130,37 @@
         {
           "command": "vscode-sparkup.biasFreeLanguage",
           "group": "sparkup",
-          "when": "editorHasSelection && editorLangId == 'markdown'"
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "vscode-sparkup.categorizeAndTag",
+          "group": "sparkup",
+          "when": "editorHasSelection"
         },
         {
           "command": "vscode-sparkup.fixSpelling",
           "group": "sparkup",
-          "when": "editorHasSelection && editorLangId == 'markdown'"
+          "when": "editorHasSelection"
         },
         {
           "command": "vscode-sparkup.revisionText",
           "group": "sparkup",
-          "when": "editorHasSelection && editorLangId == 'markdown'"
+          "when": "editorHasSelection"
         },
         {
           "command": "vscode-sparkup.seoOptimize",
           "group": "sparkup",
-          "when": "editorHasSelection && editorLangId == 'markdown'"
+          "when": "editorHasSelection"
         },
         {
           "command": "vscode-sparkup.headline",
           "group": "sparkup",
-          "when": "editorHasSelection && editorLangId == 'markdown'"
+          "when": "editorHasSelection"
         },
         {
           "command": "vscode-sparkup.simplify",
           "group": "sparkup",
-          "when": "editorHasSelection && editorLangId == 'markdown'"
+          "when": "editorHasSelection"
         }
       ]
     }

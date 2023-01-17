@@ -4,7 +4,6 @@ import { Disposable, ExtensionContext, TextDocumentContentProvider, Uri, workspa
 export class SparkupContentProvider implements TextDocumentContentProvider, Disposable {
 
 	public static scheme = 'SparkupContentProvider.headlines';
-	public static contentToDisplay = '';
 
 	constructor(private context: ExtensionContext) {}
 
@@ -18,6 +17,6 @@ export class SparkupContentProvider implements TextDocumentContentProvider, Disp
 	}
 
 	async provideTextDocumentContent(uri: Uri): Promise<string | null> {
-		return SparkupContentProvider.contentToDisplay;
+		return "";
 	}
 }

@@ -2,6 +2,11 @@
 
 ## Beta versions
 
+### [0.0.6] - 2023-01-16
+
+- Output channel for logging
+- Added support for generating categories and tags
+
 ### [0.0.5] - 2023-01-13
 
 - Update readme
