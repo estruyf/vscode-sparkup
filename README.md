@@ -16,6 +16,10 @@ With Sparkup, you can elevate your content to new heights by harnessing the powe
 - Automatically generate headlines based on the content
 - Categorize and tag your content for better organization.
 
+## What data gets passed to Sparkup?
+
+The only information that is shared with our Sparkup API is the text that you have selected to be rewritten. This text is used solely for the purpose of returning the rewritten text to you and is not stored or shared with any third parties. We value your privacy and are committed to keeping your information safe.
+
 ## Tutorial
 
 If you want more information about how to set up Sparkup, you can follow the API tutorial: [Getting started with Sparkup](https://rapidapi.com/eliostruyf/api/sparkup/tutorials/using-the-api-in-combination-with-the-sparkup---visual-studio-code-extension)
