@@ -27,7 +27,8 @@
     "onCommand:vscode-sparkup.freeform",
     "onCommand:vscode-sparkup.headline",
     "onCommand:vscode-sparkup.simplify",
-    "onCommand:vscode-sparkup.categorizeAndTag"
+    "onCommand:vscode-sparkup.categorizeAndTag",
+    "onCommand:vscode-sparkup.excerpts"
   ],
   "keywords": [
     "AI",
@@ -88,6 +89,28 @@
           "type": "string",
           "default": "",
           "markdownDescription": "Your Sparkup API key which you can get by subscribing to the API on RapidAPI: [https://rapidapi.com/eliostruyf/api/sparkup](https://rapidapi.com/eliostruyf/api/sparkup)."
+        },
+        "sparkup.freeform.instructions": {
+          "type": "array",
+          "default": [],
+          "markdownDescription": "A custom list of freeform instructions which you can use to generate your own content.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "The name of the freeform."
+              },
+              "instruction": {
+                "type": "string",
+                "description": "The instruction to generate your content. You can use {selectedText} where you want to insert your selected text in the instruction."
+              },
+              "nrOfResults": {
+                "type": "number",
+                "description": "The number of results to return (we have a maximum set to 5)."
+              }
+            }
+          }
         }
       }
     },
@@ -109,8 +132,12 @@
         "title": "Sparkup: Bias free language"
       },
       {
+        "command": "vscode-sparkup.excerpts",
+        "title": "Sparkup: Generate excerpts"
+      },
+      {
         "command": "vscode-sparkup.freeform",
-        "title": "Sparkup: Tell us what you want to do"
+        "title": "Sparkup: Use a freeform instruction"
       },
       {
         "command": "vscode-sparkup.headline",
@@ -138,7 +165,22 @@
           "when": "editorHasSelection"
         },
         {
+          "command": "vscode-sparkup.excerpts",
+          "group": "sparkup",
+          "when": "editorHasSelection"
+        },
+        {
           "command": "vscode-sparkup.fixSpelling",
+          "group": "sparkup",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "vscode-sparkup.freeform",
+          "group": "sparkup",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "vscode-sparkup.headline",
           "group": "sparkup",
           "when": "editorHasSelection"
         },
@@ -149,11 +191,6 @@
         },
         {
           "command": "vscode-sparkup.seoOptimize",
-          "group": "sparkup",
-          "when": "editorHasSelection"
-        },
-        {
-          "command": "vscode-sparkup.headline",
           "group": "sparkup",
           "when": "editorHasSelection"
         },

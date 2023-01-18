@@ -2,6 +2,11 @@
 
 ## Beta versions
 
+### [0.0.7] - 2023-01-18
+
+- Added support for generating excerpts
+- Added support for freeform instructions. This allows you to configure instructions in your VS Code settings and use the Sparkup API to generate content based on those instructions. Check the README for more information.
+
 ### [0.0.6] - 2023-01-16
 
 - Output channel for logging

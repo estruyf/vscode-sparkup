@@ -10,13 +10,15 @@ enum Endpoint {
   seo = "seo",
   headline = "headline",
   categorization = "categorization",
+  excerpts = "excerpt",
+  freeform = "freeform",
 }
 
-export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo" | "headline" | "simplify" | "categorization";
+export type IntentType = "spelling" | "biasfree" | "freeform" | "revision" | "seo" | "headline" | "simplify" | "categorization" | "excerpts";
 
 export class AiService {
   
-  public static async call(intent: IntentType, input: string, instruction?: string, keywords?: string) {
+  public static async call(intent: IntentType, input: string, instruction?: string, keywords?: string, nrOfResults: number = 3): Promise<any> {
     let endpoint = Endpoint.revision;
     let body: any = {};
 
@@ -43,6 +45,18 @@ export class AiService {
       endpoint = Endpoint.categorization;
       body = {
         input
+      };
+    } else if (intent === "excerpts") {
+      endpoint = Endpoint.excerpts;
+      body = {
+        input
+      };
+    } else if (intent === "freeform") {
+      endpoint = Endpoint.freeform;
+      body = {
+        input,
+        instruction,
+        nrOfResults
       };
     } else {
       body = {

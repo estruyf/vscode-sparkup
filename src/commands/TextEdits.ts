@@ -17,19 +17,6 @@ export class TextEdits {
     await TextEdits.edit("simplify")
   }
 
-  public static async freeform() {
-    const answer = await window.showInputBox({
-      prompt: "How do you want us to edit your text?",
-      placeHolder: "Pass us your instruction here...",
-    });
-
-    if (!answer) {
-      return;
-    }
-
-    await TextEdits.edit("freeform", answer)
-  }
-
   public static async edit(type: IntentType, instruction?: string) {
     const selectionText = getSelectedText();
     if (!selectionText) {

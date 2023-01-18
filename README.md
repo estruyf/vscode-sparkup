@@ -8,13 +8,15 @@ Are you tired of juggling multiple programs just to rewrite your content? Introd
 
 With Sparkup, you can elevate your content to new heights by harnessing the power of AI with the following features:
 
-- Customize your text for a specific audience and purpose
+- Revision your text for a specific audience and purpose
 - Ensure accuracy with spellchecks
-- Use inclusive language
+- Use inclusive language (bias-free)
 - Optimize for search engine ranking with SEO
 - Simplify your content
+- Write excerpts for your content
 - Automatically generate headlines based on the content
-- Categorize and tag your content for better organization.
+- Categorize and tag your content for better organization
+- Provide your own instructions to generate content.
 
 ## What data gets passed to Sparkup?
 
@@ -33,6 +35,36 @@ If you want more information about how to set up Sparkup, you can follow the API
 
 <p align="center">
   <img src="./assets/sparkup-options.png" alt="Sparkup actions" />
+</p>
+
+## Freeform or custom instructions
+
+The Sparkup API allows for the generation of custom content by providing your own instructions. This feature can be utilized by specifying your instructions in the `sparkup.freeform.instructions` setting in Visual Studio Code. The setting is an array of objects, each with the properties of a title, instruction, and an optional number of results (defaulting to **3** with a maximum of 5) that will be sent to the Sparkup API and used to generate the content. The title will be displayed when selecting the instruction.
+
+The instructions object has the following properties:
+
+- **title**: The title of the instruction. This will be shown when you select the instruction.
+- **instruction**: The instruction that will be sent to the Sparkup API and will be used to generate the content.
+- **nrOfResults**: The number of results that you want to receive from the Sparkup API. This is optional and defaults to 3 with a maximum of 5.
+
+### Example configuration
+
+```json
+"sparkup.freeform.instructions": [
+  {
+    "title": "Generate a blog description",
+    "instruction": "Generate an single paragraph description/excerpt for the following text.\n\nExample 1: In this article, Elio explains how you can create a reusable authentication provider extension that you can leverage in all your extensions.\n\nExample 2: In this article, Elio explains how you can simplify the communication flow from your Visual Studio Code extension and its webview to wait for its response.",
+    "nrOfResults": 2
+  }
+]
+```
+
+### Usage
+
+You can make use of your freeform instructions by executing the `Sparkup: Use a freeform instruction` (`vscode-sparkup.freeform`) command. Once you run the command, it will show a list of all your instructions. Select the one you want to use and it will generate the content based on the instruction.
+
+<p align="center">
+  <img src="./assets/sparkup-freeform-selection.png" alt="Sparkup freeform selection" />
 </p>
 
 ## Issues / Feedback
