@@ -9,6 +9,8 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "main": "./dist/desktop/extension.js",
+  "browser": "./dist/web/extension.js",
   "categories": [
     "Other"
   ],
@@ -38,7 +40,6 @@
   ],
   "license": "MIT",
   "author": "Elio Struyf <elio@struyfconsulting.be> (https://www.eliostruyf.com)",
-  "main": "./dist/extension.js",
   "contributes": {
     "walkthroughs": [
       {
@@ -203,11 +204,15 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "lint": "eslint src --ext ts"
+    "vscode:prepublish": "npm run clean && npm run compile",
+		"compile": "npm-run-all --parallel build:*",
+    "watch": "npm run dev:ext",
+    "build:ext": "webpack --mode production",
+		"build:browser": "webpack --mode production --config ./webpack.browser.config.js",
+		"dev:ext": "webpack --mode development --watch",
+		"dev:browser": "webpack --mode development --watch --config ./webpack.browser.config.js",
+    "lint": "eslint src --ext ts",
+		"clean": "rm -rf dist"
   },
   "devDependencies": {
     "@types/glob": "^8.0.0",
@@ -223,6 +228,7 @@
     "glob": "^8.0.3",
     "mocha": "^10.1.0",
     "node-fetch": "^2.6.7",
+    "npm-run-all": "^4.1.5",
     "ts-loader": "^9.4.1",
     "typescript": "^4.9.3",
     "webpack": "^5.75.0",
