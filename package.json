@@ -3,7 +3,7 @@
   "displayName": "Sparkup",
   "description": "Are you tired of juggling multiple programs just to rewrite your content? Introducing #Sparkup, a VSCode extension that streamlines the editing process by allowing you to rewrite your content directly within the editor.",
   "icon": "assets/sparkup-128x128.png",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "preview": true,
   "publisher": "eliostruyf",
   "engines": {
@@ -205,14 +205,14 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run clean && npm run compile",
-		"compile": "npm-run-all --parallel build:*",
+    "compile": "npm-run-all --parallel build:*",
     "watch": "npm run dev:ext",
     "build:ext": "webpack --mode production",
-		"build:browser": "webpack --mode production --config ./webpack.browser.config.js",
-		"dev:ext": "webpack --mode development --watch",
-		"dev:browser": "webpack --mode development --watch --config ./webpack.browser.config.js",
+    "build:browser": "webpack --mode production --config ./webpack.browser.config.js",
+    "dev:ext": "webpack --mode development --watch",
+    "dev:browser": "webpack --mode development --watch --config ./webpack.browser.config.js",
     "lint": "eslint src --ext ts",
-		"clean": "rm -rf dist"
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "@types/glob": "^8.0.0",
