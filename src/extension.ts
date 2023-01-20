@@ -1,3 +1,6 @@
+import { CommandPanel } from './panels/CommandPanel';
+import { COMMANDS } from './constants/Commands';
+import { Extension } from './service/Extension';
 import { Freeform } from './commands/Freeform';
 import { Metadata } from './commands/Metadata';
 import { RevisionText } from './commands/RevisionText';
@@ -8,14 +11,14 @@ import { SparkupContentProvider } from './provider';
 
 
 export function activate(context: vscode.ExtensionContext) {
-
+	Extension.getInstance(context);
 	new SparkupContentProvider(context).init();
 
 	/**
 	 * Headlines
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.headline', Headline.generate)
+		vscode.commands.registerCommand(COMMANDS.HEADLINE, Headline.generate)
 	);
 
 
@@ -23,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 	 * Excerpts
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.excerpts', Excerpts.process)
+		vscode.commands.registerCommand(COMMANDS.EXCERPTS, Excerpts.process)
 	);
 
 
@@ -31,15 +34,15 @@ export function activate(context: vscode.ExtensionContext) {
 	 * Text Edits
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.fixSpelling', TextEdits.fixSpelling)
+		vscode.commands.registerCommand(COMMANDS.FIX_SPELLING, TextEdits.fixSpelling)
 	);
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.biasFreeLanguage', TextEdits.biasFreeLanguage)
+		vscode.commands.registerCommand(COMMANDS.BIAS_FREE_LANGUAGE, TextEdits.biasFreeLanguage)
 	);
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.simplify', TextEdits.simplify)
+		vscode.commands.registerCommand(COMMANDS.SIMPLIFY, TextEdits.simplify)
 	);
 
 
@@ -47,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
 	 * Freeform
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.freeform', Freeform.freeform)
+		vscode.commands.registerCommand(COMMANDS.FREEFORM, Freeform.freeform)
 	);
 
 
@@ -55,7 +58,7 @@ export function activate(context: vscode.ExtensionContext) {
 	 * Revision Text
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.revisionText', RevisionText.revision)
+		vscode.commands.registerCommand(COMMANDS.REVISION_TEXT, RevisionText.revision)
 	);
 
 
@@ -63,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 	 * SEO Optimization
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.seoOptimize', SeoOptimization.optimize)
+		vscode.commands.registerCommand(COMMANDS.SEO_OPTIMIZATION, SeoOptimization.optimize)
 	);
 
 
@@ -71,8 +74,13 @@ export function activate(context: vscode.ExtensionContext) {
 	 * Categorization
 	 */
 	context.subscriptions.push(
-		vscode.commands.registerCommand('vscode-sparkup.categorizeAndTag', Metadata.process)
+		vscode.commands.registerCommand(COMMANDS.CATEGORIZE, Metadata.process)
 	);
+
+	/**
+	 * Register the tree view
+	 */
+	CommandPanel.register();
 
 	console.log(`Sparkup ✨ is now active!`);
 }

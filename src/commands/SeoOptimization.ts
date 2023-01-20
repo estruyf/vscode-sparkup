@@ -11,11 +11,6 @@ export class SeoOptimization {
       return;
     }
 
-    if (selectionText.length < 0 || selectionText.length > 1000) {
-      window.showErrorMessage("Please select a text between 1 and 1000 characters.");
-      return;
-    }
-
     let keywords = await window.showInputBox({
       title: "Enter keywords for SEO:",
       placeHolder: "Enter keywords (separated by commas)"

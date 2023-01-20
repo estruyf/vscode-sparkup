@@ -12,11 +12,6 @@ export class Headline {
       return;
     }
 
-    if (selectionText.length < 0 || selectionText.length > 1000) {
-      window.showErrorMessage("Please select a text between 1 and 1000 characters.");
-      return;
-    }
-
     window.withProgress({
       location: ProgressLocation.Notification,
       cancellable: false,

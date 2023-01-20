@@ -7,9 +7,14 @@ import { createDocument, getSelectedText } from "../utils";
 
 export class Freeform {
 
-  public static async freeform() {
+  public static getInstructions() {
     const config = workspace.getConfiguration("sparkup");
     const instructions = config.get<FreeformInstruction[]>("freeform.instructions");
+    return instructions;
+  }
+
+  public static async freeform() {
+    const instructions = Freeform.getInstructions();
 
     if (!instructions || instructions.length === 0) {
       window.showErrorMessage("Sparkup: Please set your freeform instructions in the settings.");

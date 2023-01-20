@@ -13,11 +13,6 @@ export class RevisionText {
     const intentTypes = ["Informative", "Descriptive", "Engaging", "Tells a story"];
     const audienceTypes = ["General", "Experts", "Marketing", "Sales", "Technical"];
 
-    if (selectionText.length < 0 || selectionText.length > 1000) {
-      window.showErrorMessage("Please select a text between 1 and 1000 characters.");
-      return;
-    }
-
     const intent = await window.showQuickPick(intentTypes, {
       canPickMany: false,
       title: "Select the intent for your text",

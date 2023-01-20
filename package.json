@@ -9,6 +9,10 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "galleryBanner": {
+    "color": "#1a1914",
+    "theme": "dark"
+  },
   "main": "./dist/desktop/extension.js",
   "browser": "./dist/web/extension.js",
   "categories": [
@@ -53,17 +57,12 @@
     "views": {
       "sparkup": [
         {
-          "id": "sparkup.welcome",
-          "name": "Welcome"
+          "id": "sparkup.commands",
+          "name": "Let it spark ✨",
+          "type": "webview"
         }
       ]
     },
-    "viewsWelcome": [
-			{
-				"view": "sparkup.welcome",
-				"contents": "Welcome to Sparkup"
-			}
-		],
     "walkthroughs": [
       {
         "id": "sparkup.init",
