@@ -41,6 +41,29 @@
   "license": "MIT",
   "author": "Elio Struyf <elio@struyfconsulting.be> (https://www.eliostruyf.com)",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sparkup",
+          "title": "Sparkup",
+          "icon": "./assets/sparkup-activitybar.svg"
+        }
+      ]
+    },
+    "views": {
+      "sparkup": [
+        {
+          "id": "sparkup.welcome",
+          "name": "Welcome"
+        }
+      ]
+    },
+    "viewsWelcome": [
+			{
+				"view": "sparkup.welcome",
+				"contents": "Welcome to Sparkup"
+			}
+		],
     "walkthroughs": [
       {
         "id": "sparkup.init",
