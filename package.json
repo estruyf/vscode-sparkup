@@ -25,16 +25,7 @@
   },
   "qna": "https://github.com/estruyf/vscode-sparkup/issues",
   "activationEvents": [
-    "workspaceContains:**/*.md*",
-    "onCommand:vscode-sparkup.fixSpelling",
-    "onCommand:vscode-sparkup.revisionText",
-    "onCommand:vscode-sparkup.seoOptimize",
-    "onCommand:vscode-sparkup.biasFreeLanguage",
-    "onCommand:vscode-sparkup.freeform",
-    "onCommand:vscode-sparkup.headline",
-    "onCommand:vscode-sparkup.simplify",
-    "onCommand:vscode-sparkup.categorizeAndTag",
-    "onCommand:vscode-sparkup.excerpts"
+    "onStartupFinished"
   ],
   "keywords": [
     "AI",
@@ -173,9 +164,19 @@
       {
         "command": "vscode-sparkup.categorizeAndTag",
         "title": "Sparkup: Generate categories and tags"
+      },
+      {
+        "command": "vscode-sparkup.openSettings",
+        "title": "Sparkup: Open the settings"
       }
     ],
     "menus": {
+      "commandPalette": [
+        {
+          "command": "vscode-sparkup.openSettings",
+          "when": "false"
+        }
+      ],
       "editor/context": [
         {
           "command": "vscode-sparkup.biasFreeLanguage",

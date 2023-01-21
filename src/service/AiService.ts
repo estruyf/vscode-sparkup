@@ -1,3 +1,4 @@
+import { Extension } from './Extension';
 import fetch from "node-fetch";
 import { workspace, window } from "vscode";
 import { Logger } from "./Logger";
@@ -23,8 +24,7 @@ export class AiService {
     let body: any = {};
 
     // Get the API key from your settings
-    const config = workspace.getConfiguration("sparkup");
-    const apiKey = config.get("apiKey");
+    const apiKey = Extension.getInstance().apiKey;
     if (!apiKey) {
       window.showErrorMessage("Sparkup: Please set your API key in the settings.");
       throw new Error("No API key set.");

@@ -82,6 +82,15 @@ export function activate(context: vscode.ExtensionContext) {
 	 */
 	CommandPanel.register();
 
+	/**
+	 * Settings command
+	 */
+	context.subscriptions.push(
+		vscode.commands.registerCommand(COMMANDS.OPEN_SETTINGS, () => {
+			vscode.commands.executeCommand('workbench.action.openSettings', '@ext:eliostruyf.vscode-sparkup');
+		})
+	);
+
 	console.log(`Sparkup ✨ is now active!`);
 }
 

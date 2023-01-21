@@ -1,4 +1,4 @@
-import { ExtensionContext, ExtensionMode, SecretStorage } from "vscode";
+import { ExtensionContext, ExtensionMode, SecretStorage, workspace } from "vscode";
 
 
 export class Extension {
@@ -65,5 +65,14 @@ export class Extension {
    */
   public get extensionPath(): string {
     return this.ctx.extensionPath;
+  }
+
+  /**
+   * Get the API key from the settings
+   */
+  public get apiKey(): string | undefined {
+    const config = workspace.getConfiguration("sparkup");
+    const apiKey = config.get<string>("apiKey");
+    return apiKey;
   }
 }
