@@ -125,12 +125,12 @@
               }
             }
           }
+        },
+        "sparkup.contextMenu.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Enable or disable the Sparkup actions in the context menu."
         }
-      },
-      "sparkup.contextMenu.enabled": {
-        "type": "boolean",
-        "default": true,
-        "markdownDescription": "Enable or disable the Sparkup actions in the context menu."
       }
     },
     "commands": [
@@ -186,7 +186,7 @@
         {
           "command": "vscode-sparkup.biasFreeLanguage",
           "group": "sparkup",
-          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled == true"
         },
         {
           "command": "vscode-sparkup.categorizeAndTag",

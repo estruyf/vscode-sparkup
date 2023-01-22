@@ -67,6 +67,16 @@ You can make use of your freeform instructions by executing the `Sparkup: Use a 
   <img src="./assets/sparkup-freeform-selection.png" alt="Sparkup freeform selection" />
 </p>
 
+### Settings
+
+The following settings are available:
+
+| Setting | Description | Default |
+| --- | --- | --- |
+| `sparkup.apiKey` | The API key that you can get from the [Sparkup API](https://rapidapi.com/eliostruyf/api/sparkup) | `""` |
+| `sparkup.freeform.instructions` | The instructions that you want to use for the freeform instructions. | `[]` |
+| `sparkup.contextMenu.enabled` | Whether to show the Sparkup context menu (right-click on selected text). | `true` |
+
 ## Issues / Feedback
 
 All your issues and feedback can be submitted to the [GitHub repository](https://github.com/estruyf/vscode-sparkup/issues).
