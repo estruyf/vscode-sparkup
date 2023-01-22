@@ -136,6 +136,11 @@
             }
           }
         }
+      },
+      "sparkup.contextMenu.enabled": {
+        "type": "boolean",
+        "default": true,
+        "markdownDescription": "Enable or disable the Sparkup actions in the context menu."
       }
     },
     "commands": [
@@ -181,47 +186,47 @@
         {
           "command": "vscode-sparkup.biasFreeLanguage",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.categorizeAndTag",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.excerpts",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.fixSpelling",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.freeform",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.headline",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.revisionText",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.seoOptimize",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         },
         {
           "command": "vscode-sparkup.simplify",
           "group": "sparkup",
-          "when": "editorHasSelection"
+          "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
         }
       ]
     }
