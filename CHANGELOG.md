@@ -2,6 +2,10 @@
 
 ## Beta versions
 
+### [0.0.11] - 2023-01-22
+
+- Added the `sparkup.contextMenu.enabled` setting to enable/disable the Sparkup context menu (right-click on selected text).
+
 ### [0.0.10] - 2023-01-21
 
 - Add API key check for the Sparkup panel. If not set, the panel shows the steps to set it up.
