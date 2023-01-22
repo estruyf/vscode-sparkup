@@ -2,6 +2,16 @@
 
 ## Beta versions
 
+### [0.0.10] - 2023-01-21
+
+- Add API key check for the Sparkup panel. If not set, the panel shows the steps to set it up.
+
+### [0.0.9] - 2023-01-20
+
+- Increase the number of characters to allow for the selection
+- Added Sparkup panel
+- New sparkup logo
+
 ### [0.0.8] - 2023-01-19
 
 - Added support to use the extension in the web, like on `vscode.dev` or `github.dev`.

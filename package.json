@@ -3,11 +3,15 @@
   "displayName": "Sparkup",
   "description": "Are you tired of juggling multiple programs just to rewrite your content? Introducing #Sparkup, a VSCode extension that streamlines the editing process by allowing you to rewrite your content directly within the editor.",
   "icon": "assets/sparkup-128x128.png",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "preview": true,
   "publisher": "eliostruyf",
   "engines": {
     "vscode": "^1.74.0"
+  },
+  "galleryBanner": {
+    "color": "#1a1914",
+    "theme": "dark"
   },
   "main": "./dist/desktop/extension.js",
   "browser": "./dist/web/extension.js",
@@ -21,16 +25,7 @@
   },
   "qna": "https://github.com/estruyf/vscode-sparkup/issues",
   "activationEvents": [
-    "workspaceContains:**/*.md*",
-    "onCommand:vscode-sparkup.fixSpelling",
-    "onCommand:vscode-sparkup.revisionText",
-    "onCommand:vscode-sparkup.seoOptimize",
-    "onCommand:vscode-sparkup.biasFreeLanguage",
-    "onCommand:vscode-sparkup.freeform",
-    "onCommand:vscode-sparkup.headline",
-    "onCommand:vscode-sparkup.simplify",
-    "onCommand:vscode-sparkup.categorizeAndTag",
-    "onCommand:vscode-sparkup.excerpts"
+    "onStartupFinished"
   ],
   "keywords": [
     "AI",
@@ -53,17 +48,12 @@
     "views": {
       "sparkup": [
         {
-          "id": "sparkup.welcome",
-          "name": "Welcome"
+          "id": "sparkup.commands",
+          "name": "Let it spark ✨",
+          "type": "webview"
         }
       ]
     },
-    "viewsWelcome": [
-			{
-				"view": "sparkup.welcome",
-				"contents": "Welcome to Sparkup"
-			}
-		],
     "walkthroughs": [
       {
         "id": "sparkup.init",
@@ -179,9 +169,19 @@
       {
         "command": "vscode-sparkup.categorizeAndTag",
         "title": "Sparkup: Generate categories and tags"
+      },
+      {
+        "command": "vscode-sparkup.openSettings",
+        "title": "Sparkup: Open the settings"
       }
     ],
     "menus": {
+      "commandPalette": [
+        {
+          "command": "vscode-sparkup.openSettings",
+          "when": "false"
+        }
+      ],
       "editor/context": [
         {
           "command": "vscode-sparkup.biasFreeLanguage",
