@@ -3,7 +3,7 @@
   "displayName": "Sparkup",
   "description": "Are you tired of juggling multiple programs just to rewrite your content? Introducing #Sparkup, a VSCode extension that streamlines the editing process by allowing you to rewrite your content directly within the editor.",
   "icon": "assets/sparkup-128x128.png",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "preview": true,
   "publisher": "eliostruyf",
   "engines": {
