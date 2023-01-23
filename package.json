@@ -136,43 +136,59 @@
     "commands": [
       {
         "command": "vscode-sparkup.revisionText",
-        "title": "Sparkup: Revision text"
+        "title": "Revision text",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.seoOptimize",
-        "title": "Sparkup: Optimize text for SEO"
+        "title": "Optimize text for SEO",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.fixSpelling",
-        "title": "Sparkup: Fix spelling mistakes"
+        "title": "Fix spelling mistakes",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.biasFreeLanguage",
-        "title": "Sparkup: Bias free language"
+        "title": "Bias free language",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.excerpts",
-        "title": "Sparkup: Generate excerpts"
+        "title": "Generate excerpts",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.freeform",
-        "title": "Sparkup: Use a freeform instruction"
+        "title": "Use a freeform instruction",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.headline",
-        "title": "Sparkup: Create a headline for your content"
+        "title": "Create a headline for your content",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.simplify",
-        "title": "Sparkup: Simplify your content"
+        "title": "Simplify your content",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.categorizeAndTag",
-        "title": "Sparkup: Generate categories and tags"
+        "title": "Generate categories and tags",
+        "category": "Sparkup"
       },
       {
         "command": "vscode-sparkup.openSettings",
-        "title": "Sparkup: Open the settings"
+        "title": "Open the settings",
+        "category": "Sparkup"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "sparkup.menu",
+        "label": "Sparkup"
       }
     ],
     "menus": {
@@ -182,7 +198,7 @@
           "when": "false"
         }
       ],
-      "editor/context": [
+      "sparkup.menu": [
         {
           "command": "vscode-sparkup.biasFreeLanguage",
           "group": "sparkup",
@@ -227,6 +243,12 @@
           "command": "vscode-sparkup.simplify",
           "group": "sparkup",
           "when": "editorHasSelection && config.sparkup.contextMenu.enabled"
+        }
+      ],
+      "editor/context": [
+        {
+          "submenu": "sparkup.menu",
+          "group": "sparkup"
         }
       ]
     }

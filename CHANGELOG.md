@@ -2,6 +2,10 @@
 
 ## Beta versions
 
+### [0.0.12] - 2023-01-23
+
+- Created a submenu for the `editor/context` menu to avoid cluttering the context menu.
+
 ### [0.0.11] - 2023-01-22
 
 - Added the `sparkup.contextMenu.enabled` setting to enable/disable the Sparkup context menu (right-click on selected text).
